@@ -60,7 +60,12 @@ AbstractDohoneSDK.prototype.request = function (params, callback) {
         if (err)
             return callback(err)
 
-        callback(null, _this.computeResponse(_this.parseDohoneResponse(body.trim())))
+        try {
+            return callback(null, _this.computeResponse(_this.parseDohoneResponse(body.trim())))
+        }
+        catch (e) {
+            return callback(e)
+        }
     })
 }
 
