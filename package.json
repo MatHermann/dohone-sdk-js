@@ -1,0 +1,34 @@
+{
+  "name": "dohone-sdk",
+  "version": "1.0.0",
+  "description": "A JS SDK for easily use Dohone payment API",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mathermann/dohone-sdk-js.git"
+  },
+  "keywords": [
+    "Cameroon",
+    "Dohone",
+    "payment-integration",
+    "mobile-payments",
+    "sdk"
+  ],
+  "author": {
+    "name": "mathermann",
+    "email": "wkouogangkamdem@gmail.com",
+    "homepage": "https://github.com/mathermann",
+    "role": "Computer Engineer"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mathermann/dohone-sdk-js/issues"
+  },
+  "homepage": "https://github.com/mathermann/dohone-sdk-js#readme",
+  "dependencies": {
+    "md5": "^2.2.1",
+    "request": "^2.88.0"
+  }
+}
