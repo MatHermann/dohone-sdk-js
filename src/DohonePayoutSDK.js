@@ -80,6 +80,7 @@ DohonePayoutSDK.prototype.mapNotificationData = function (data) {
         devise: 'currency',
         mode: 'operator',
         status: 'status',
+        refTrans: 'dohoneRef',
         nameDest: 'customerName',
         destination: 'customerPhoneNumber',
         withdrawal_mode: 'withdrawalMode'
