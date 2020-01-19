@@ -28,7 +28,7 @@ DohonePayoutSDK.prototype.parseDohoneResponse = function (res) {
 
     response.message = message
 
-    if (response.isSuccess)
+    if (response.status === 'OK')
         response.REF = message
 
     return response
