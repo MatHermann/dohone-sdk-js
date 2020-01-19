@@ -1,6 +1,6 @@
 {
   "name": "dohone-sdk",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A JS SDK for easily use Dohone payment API",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

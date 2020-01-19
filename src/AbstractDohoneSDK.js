@@ -54,7 +54,8 @@ AbstractDohoneSDK.prototype.request = function (params, callback) {
     var _this = this
     var options = {
         url: this.BASE_URL,
-        qs: params
+        qs: params,
+        timeout: 10*60*1000 // 10 minutes
     }
     request(options, function (err, res, body) {
         if (err)
