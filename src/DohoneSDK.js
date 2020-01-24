@@ -71,13 +71,18 @@ DohoneSDK.prototype.start = function (transaction, params, callback) {
     this.request(params, callback)
 }
 
-DohoneSDK.prototype.confirmSMS = function (transaction, params, callback) {
+DohoneSDK.prototype.confirmSMS = function (transaction, params, callback, retryOnError) {
     params = {
         cmd: 'cfrmsms',
         rCS: params.code,
         rT: transaction.customerPhoneNumber
     }
-    this.request(params, callback)
+    this.request(params, function (err, dohoneRes) {
+        if (err && retryOnError)
+            this.request(params, callback)
+        else
+            callback(err, dohoneRes)
+    })
 }
 
 DohoneSDK.prototype.verify = function (transaction, callback) {
