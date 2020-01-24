@@ -77,9 +77,10 @@ DohoneSDK.prototype.confirmSMS = function (transaction, params, callback, retryO
         rCS: params.code,
         rT: transaction.customerPhoneNumber
     }
+    var _this = this
     this.request(params, function (err, dohoneRes) {
         if (err && retryOnError)
-            this.request(params, callback)
+            _this.request(params, callback)
         else
             callback(err, dohoneRes)
     })
