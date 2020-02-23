@@ -228,7 +228,7 @@ if (dohoneSdk.checkHash(data)) {
             // handle request error here
         }
         if (dohoneRes.isSuccess) {
-            // everything is OK, do what you want
+            // everything is OK, do what you want with data
         }
         else {
             // unrecognized transaction, you can ignore the request or do something else
