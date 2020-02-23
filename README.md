@@ -135,14 +135,6 @@ dohoneSdk.start(transaction, params, function (err, dohoneRes) {
 
 // ...
 ```
-> #### Bonus tip
-> We have noticed that the START command often returns an empty answer,
-> it is sometimes necessary to make several attempts before getting a good answer.
-> For this, we have provided a fourth optional parameter to the start() method that defines the maximum number of attempts to be made, its default value is 1.
-> ``` js
-> // for example, if you want to allow five attempts
-> dohoneSdk.start(transaction, params, callback, 5);
-> ```
 
 ### 3.4. Make a &laquo; CRFMSMS &raquo; command
 ``` js
@@ -182,7 +174,15 @@ dohoneSdk.confirmSMS(transaction, params, function (err, dohoneRes) {
 });
 
 // ...
-```
+``` 
+> #### Bonus tip
+> We have noticed that the **CFRMSMS** command often returns an empty answer,
+> it is sometimes necessary to make several attempts before getting a good answer.
+> For this, we have provided a fourth optional parameter to the confirmSMS() method that defines the maximum number of attempts to be made, its default value is 1.
+> ``` js
+> // for example, if you want to allow five attempts
+> dohoneSdk.confirmSMS(transaction, params, callback, 5);
+> ```
 
 ### 3.5. Make a &laquo; VERIFY &raquo; command
 ``` js
