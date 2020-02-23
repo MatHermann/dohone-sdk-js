@@ -41,8 +41,8 @@ DohoneSDK.prototype.quote = function (transaction, params, callback) {
         rH: this.merchantKey,
         rMo: this.getOperatorCodeFromSlug(transaction.operator),
         rMt: transaction.amount,
-        rDvs: transaction.currency,
-        levelFeeds: params.mode
+        rDvs: transaction.currency || 'XAF',
+        levelFeeds: params.mode || 0
     }
     this.request(params, callback)
 }
@@ -60,10 +60,10 @@ DohoneSDK.prototype.start = function (transaction, params, callback) {
         rE: transaction.customerEmail,
         rI: transaction.ref,
         rH: this.merchantKey,
-        rMo: this.getOperatorCodeFromSlug(transaction.operator),
+        rMo: this.getOperatorCodeFromSlug(transaction.operator || 'DOHONE_OM'),
         rOTP: params.OTP,
         rMt: transaction.amount,
-        rDvs: transaction.currency,
+        rDvs: transaction.currency || 'XAF',
         source: this.dohoneAppName,
         notifyPage: notifyUrl,
         motif: transaction.reason
@@ -91,7 +91,7 @@ DohoneSDK.prototype.verify = function (transaction, callback) {
         cmd: 'verify',
         rI: transaction.ref,
         rMt: transaction.amount,
-        rDvs: transaction.currency,
+        rDvs: transaction.currency || 'XAF',
         idReqDoh: transaction.dohoneRef
     }
     this.request(params, callback)

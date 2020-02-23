@@ -38,17 +38,17 @@ DohonePayoutSDK.prototype.quote = function (transaction, callback) {
     var params = {
         cmd: 'cotation',
         amount: transaction.amount,
-        devise: transaction.currency,
-        mode: this.getOperatorCodeFromSlug(transaction.operator)
+        devise: transaction.currency || 'XAF',
+        mode: this.getOperatorCodeFromSlug(transaction.operator || 'DOHONE_OM')
     }
     this.request(params, callback)
 }
 
 DohonePayoutSDK.prototype.transfer = function (transaction, callback) {
     var account = this.dohoneAccount
-    var mode = this.getOperatorCodeFromSlug(transaction.operator)
+    var mode = this.getOperatorCodeFromSlug(transaction.operator || 'DOHONE_OM')
     var amount = transaction.amount
-    var devise = transaction.currency
+    var devise = transaction.currency || 'XAF'
     var transID = transaction.ref
     var hash = md5(account + mode + amount + devise + transID + this.hashCode)
     var notifyUrl = this.notifyUrl
