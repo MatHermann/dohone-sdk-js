@@ -288,8 +288,8 @@ You can find [DohonePayoutSDK class here][link-dohone-payout-sdk].
 
 [link-author]: mailto:wkouogangkamdem@gmail.com
 
-[link-dohone-sdk]: src/DohoneSDK.php
-[link-dohone-payout-sdk]: src/DohonePayoutSDK.php
+[link-dohone-sdk]: src/DohoneSDK.js
+[link-dohone-payout-sdk]: src/DohonePayoutSDK.js
 
 [link-dohone-doc-mobile]: https://www.my-dohone.com/dohone/site/modules/pagesExtra/api/1/tuto-api-mobile.pdf
 [link-dohone-doc-web]: https://www.my-dohone.com/dohone/site/modules/pagesExtra/api/1/tuto-api-dohone.pdf
