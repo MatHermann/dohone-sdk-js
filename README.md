@@ -59,6 +59,7 @@ var dohoneSdk = dohone.payin(merchantKey, appName, hashCode, notifyUrl);
  * transaction is a JSON object with following properties
  *   - amount: number
  *   - currency: 'XAF', 'EUR' or 'USD'
+ *   
  * params is a JSON object with following properties
  *   - mode: 0, 1, 2, 3 or 4 (exact as levelFeeds in Dohone docs)
  */
@@ -99,6 +100,7 @@ dohoneSdk.quote(transaction, params, function (err, dohoneRes) {
  *   - customerEmail: string
  *   - reason: string
  *   - notifyUrl: string (notification URL for this transaction)
+ *   
  * params is a JSON object with following properties
  *   - OTP: number (payment code in case of Orange Money)
  */
@@ -136,13 +138,14 @@ dohoneSdk.start(transaction, params, function (err, dohoneRes) {
 // ...
 ```
 
-### 3.4. Make a &laquo; CRFMSMS &raquo; command
+### 3.4. Make a &laquo; CFRMSMS &raquo; command
 ``` js
 // ...
 
 /**
  * transaction is a JSON object with following properties
  *   - customerPhoneNumber: string
+ *   
  * params is a JSON object with following properties
  *   - code: string (Dohone authorization code)
  */
@@ -201,7 +204,7 @@ var transaction = {
     amount: 1000,
     currency: 'XAF'
 };
-dohoneSdk.start(transaction, function (err, dohoneRes) {
+dohoneSdk.verify(transaction, function (err, dohoneRes) {
     if (err) {
         // handle request error here
     }
